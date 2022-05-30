@@ -1,4 +1,42 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <h3 class = "my-2" >Item Details</h3>
+        </div>
+        <div class="input-group justify-content-end my-2 col">
+            <div class="form-outline">
+                <input type="search" class="form-control" id="myInput" placeholder="Search" />
+            </div>
+            <button type="button" class="btn btn-primary">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="table-responsive"> 
+        <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+            
+              
+              <tr class="location_item_table">
+                  <td><%= @item.id %></td>
+                  <td><%= @item.name %></td>
+                  <td><%= @item.description %></td>
+                  <td><%= @item.price%></td>
+              </tr>
+     
+        </table>
+    </div>
+
+  <%= link_to 'Edit', edit_item_path(@item), class: 'btn btn-warning text-light' %> 
+  <%= link_to 'Back', items_path, class: 'btn btn-primary text-light' %>
+  </div>
