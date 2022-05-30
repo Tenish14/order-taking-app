@@ -1,5 +1,27 @@
-<h1>New Item</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-6 mx-auto my-auto">
+        <h2 class="text-center mt-5">Add Item</h2>
+            <%= form_with(model: @item, local: true, data: { turbo: false }) do |f| %>
 
-<%= render 'form', item: @item %>
+                <%= f.label :name, class: 'required form-label' %>
+                <%= f.text_field :name, class: 'form-control', required: true %>
 
-<%= link_to 'Back', items_path %>
+                <%= f.label :description, class: 'required form-label' %>
+                <%= f.text_field :description, class: 'form-control', required: true  %>
+
+                <%= f.label :price, class: 'required form-label' %>
+                <%= f.text_field :price, class: 'form-control', required: true  %>
+
+                <div class="d-grid gap-2 my-2">
+                    <%= render 'form', item: @item %>
+                    <%= link_to 'Back', items_path, class: 'btn btn-warning text-light' %>
+                </div>
+
+            <% end %>
+        </div>
+    </div>
+</div>
+
+
+
